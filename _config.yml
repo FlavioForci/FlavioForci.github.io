@@ -34,6 +34,12 @@ theme: Midnight
 plugins:
   - jekyll-feed
 
+collections:
+  manhwas:
+    output: true
+    permalink: /manhwas/:name/
+
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
