@@ -34,7 +34,8 @@ theme: Midnight
 plugins:
   - jekyll-feed
 
-collections:
+#Collection Erstellt 
+collections: 
   manhwas:
     output: true
     permalink: /manhwas/:name/
