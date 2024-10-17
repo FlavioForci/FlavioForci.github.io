@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Manhwa Übersicht</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Manhwa Übersicht</h1>
+    <form action="/" method="get">
+      <input type="text" name="search" placeholder="Manhwa suchen...">
+    </form>
+  </header>
+  <section>
+    <h2>Alle Manhwas</h2>
+    <ul>
+      {% assign sorted_manhwas = site.manhwas | sort: 'rating' | reverse %}
+      {% for manhwa in sorted_manhwas %}
+        <li>
+          <a href="{{ manhwa.url }}">{{ manhwa.title }}</a> - Bewertung: {{ manhwa.rating }}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</body>
+</html>
