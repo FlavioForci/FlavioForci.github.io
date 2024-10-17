@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #202020;
+    color: white;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner {
+    background-image: url('https://via.placeholder.com/1500x500');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.banner-text h2 {
+    font-size: 3rem;
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.comic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.comic {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comic img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #202020;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
