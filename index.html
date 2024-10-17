@@ -21,6 +21,22 @@
   {% endfor %}
 </ul>
 
+<section class="manhwa-grid">
+  {% for manhwa in site.manhwas %}
+  <div class="manhwa-card">
+    <img src="{{ manhwa.cover }}" alt="{{ manhwa.title }} cover image">
+    <h3>{{ manhwa.title }}</h3>
+    <div class="stars">
+      {% for i in (1..manhwa.rating | ceil) %}
+        ★
+      {% endfor %}
+    </div>
+    <p><strong>Genres:</strong> {{ manhwa.genre | join: ', ' }}</p>
+  </div>
+  {% endfor %}
+</section>
+
+
     </ul>
   </section>
 </body>
