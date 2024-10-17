@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p><strong>Genres:</strong> {{ page.genre | join: ', ' }}</p>
+    <p><strong>Bewertung:</strong> {{ page.rating }}</p>
+    <p><strong>Kapitel:</strong> {{ page.chapters }}</p>
+    <p>{{ page.summary }}</p>
+    <ul>
+      {% for link in page.read_links %}
+        <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </header>
+</body>
+</html>
 
