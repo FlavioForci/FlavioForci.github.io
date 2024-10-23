@@ -1,28 +1,53 @@
+// Basisstile
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-  background-color: #333;
+.header {
+  background-color: #00cc66;
+  padding: 20px;
+  text-align: center;
   color: white;
+}
+
+.content-section {
+  margin: 20px;
+}
+
+.webtoon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.webtoon-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.webtoon-item img {
+  width: 100%;
+  height: auto;
+}
+
+.episode-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.episode-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
   padding: 10px;
 }
 
-ul {
-  list-style: none;
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
 }
 
-li {
-  margin: 10px 0;
-}
-
-a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
