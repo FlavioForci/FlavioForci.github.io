@@ -1,0 +1,52 @@
+// Basisstile
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #00cc66;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.content-section {
+  margin: 20px;
+}
+
+.webtoon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.webtoon-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.webtoon-item img {
+  width: 100%;
+  height: auto;
+}
+
+.episode-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.episode-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
