@@ -1,7 +1,7 @@
 ---
 layout: manhwa
 title: "Tower of God"
-rating: 9.5
+rating: 9.2
 genre: ["Action", "Fantasy", "Adventure"]
 summary: "Ein Junge namens Bam betritt einen mysteriösen Turm, in dem es viele Prüfungen und Herausforderungen gibt, um Macht und Antworten zu finden."
 chapters: 500
