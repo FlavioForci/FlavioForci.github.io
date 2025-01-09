@@ -11,6 +11,9 @@
 </head>
 <body>
   <!-- Navigation -->
+   <!-- Dark Mode Toggle Button -->
+<button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙 / 🌞</button>
+
   <header>
     <nav>
       <div class="logo">Mein Portfolio</div>
@@ -74,9 +77,22 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2 id="modalTitle"></h2>
       <p id="modalDescription"></p>
-      <img id="modalImage" src="Screenshot 2025-01-09 113857.png"alt="test">
+      <img id="modalImage" src="" alt="Projekt-Bild">
     </div>
   </div>
+
+
+  <div id="loader">
+    <div class="loader-circle"></div>
+  </div>
+
+  <div class="fade-in-on-scroll">
+    <h2>Mein tolles Projekt</h2>
+    <p>Beschreibung des Projekts...</p>
+  </div>
+  
+  
+
 
   <!-- Footer -->
   <footer>
