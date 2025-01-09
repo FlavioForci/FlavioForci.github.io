@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mein Portfolio - Webentwickler mit Erfahrung in Frontend und Backend.">
+  <meta name="keywords" content="Portfolio, Webentwickler, Frontend, Backend, HTML, CSS, JavaScript, Projekte">
+  <meta name="author" content="Dein Name">
+  <title>Mein Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="logo">Mein Portfolio</div>
+      <ul>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#projects">Projekte</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Über mich -->
+  <section id="about" class="section fade-in">
+    <div class="container">
+      <h1>Über mich</h1>
+      <p>Ich bin ein leidenschaftlicher Entwickler mit Erfahrung in Frontend und Backend. Hier zeige ich einige meiner Projekte und Fähigkeiten.</p>
+    </div>
+  </section>
+
+  <!-- Projekte -->
+  <section id="projects" class="section fade-in">
+    <div class="container">
+      <h2>Meine Projekte</h2>
+      <div class="projects-grid">
+        <div class="project-card" onclick="openModal('Projekt 1', 'Beschreibung des Projekts 1', 'project1.jpg')">
+          <img src="Screenshot 2025-01-09 113857.png" alt="Projekt 1">
+          <h3>Projekt 1</h3>
+          <p>Beschreibung des Projekts.</p>
+        </div>
+        <div class="project-card" onclick="openModal('Projekt 2', 'Beschreibung des Projekts 2', 'project2.jpg')">
+          <img src="project2.jpg" alt="Projekt 2">
+          <h3>Projekt 2</h3>
+          <p>Beschreibung des Projekts.</p>
+        </div>
+        <div class="project-card" onclick="openModal('Projekt 3', 'Beschreibung des Projekts 3', 'project3.jpg')">
+          <img src="project3.jpg" alt="Projekt 3">
+          <h3>Projekt 3</h3>
+          <p>Beschreibung des Projekts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="contact" class="section fade-in">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <p>Schreiben Sie mir eine Nachricht oder rufen Sie mich an, um mehr über meine Projekte und Erfahrungen zu erfahren.</p>
+      <form action="mailto:me@example.com" method="post">
+        <input type="text" name="name" placeholder="Ihr Name" required>
+        <input type="email" name="email" placeholder="Ihre E-Mail" required>
+        <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
+        <button type="submit">Absenden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal für Projekt-Details -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <img id="modalImage" src="" alt="Projekt-Bild">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mein Portfolio. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
