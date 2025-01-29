@@ -1,0 +1,497 @@
+
+/* * {
+    outline: 1px solid red; } /* Nur für Debugging */
+
+html, body {
+    background-color: rgb(29, 27, 27);
+    height: 100%;
+}
+
+body {
+    background-color: rgb(29, 27, 27);;
+    z-index: 0;
+    transition: margin-left 0.3s;
+    margin: 0;
+}
+
+
+.sidebar, .nav-container, .video-container {
+    background-color: transparent;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.menu-toggle {
+    display: none;
+    position: fixed;
+    left: 1%;
+    top: 20px;
+    z-index: 100;
+    background: #4d4949;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 20px;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    transition: left 0.3s;
+    z-index: 99;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.nav-container {
+    object-fit: cover;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    background-color: #33333381;
+}
+
+.logo {
+    width: auto;
+    height: auto;
+    margin-right: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    padding: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background-color: #b95851;
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.content.shifted {
+    margin-left: 250px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: auto;
+    height: 400px;
+    z-index: 1;
+    object-fit: cover;
+    object-position: 10% 20% !important;
+}
+
+.video-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.25) 15%,
+        rgba(0, 0, 0, 0.35) 30%,
+        rgba(0, 0, 0, 0.25) 70%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+    box-shadow: inset 0 0 40px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 100;
+}
+
+.info-section {
+    display: flex;
+    display: none;
+    justify-content: space-around; /* Boxen gleichmäßig verteilen */
+    padding: 0px;
+    background-color: #00000000; /* Optionaler Hintergrund */
+    margin-top: 10px; /* Abstand nach dem Video */
+    flex-wrap: wrap;
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Sanfte Übergänge */
+
+}
+
+.info-box {
+    flex: 1 1 45%; /* Jede Box bekommt den gleichen Platz */
+    text-align: center;
+    background-color: #333333; /* Hintergrundfarbe der Box */
+    padding: 20px;
+    margin:  10px; /* Abstand zwischen den Boxen */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Schatten */
+    color: white;
+}
+
+.info-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.info-value {
+    font-size: 1rem;
+}
+
+.info-section.hidden {
+    opacity: 0;
+    max-height: 0; /* Setzt die max-height auf 0 für den ausgeblendeten Zustand */
+    overflow: hidden; /* Verhindert, dass der Inhalt sichtbar bleibt */
+}
+
+.info-section.active {
+    opacity: 1; /* Sichtbar machen */
+    max-height: 1000px; /* Oder eine größere max-height, um den Inhalt anzuzeigen */
+    overflow: visible; /* Damit der Inhalt sichtbar bleibt */
+    display: flex;
+}
+
+#toggleButton {
+    cursor: pointer; /* Zeigt, dass der Button klickbar ist */
+    background-color: #444444; /* Andere Farbe für den Button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Gleicher Schatten wie die anderen Boxen */
+}
+
+#toggleButton:hover {
+    background-color: #555555; /* Hover-Effekt für den Button */
+}
+
+/* Grid-Section */
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding: 10px;
+    margin-top: 20px; /* Abstand zur Reward-Code-Section */
+}
+
+/* Grid-Item (klickbare Box) */
+.grid-item {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Abstand zwischen Bild und Text */
+    background-color: #44444448; /* Hintergrundfarbe der Box */
+    padding: 1px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Schatten */
+    text-decoration: none; /* Unterstreichung entfernen */
+    color: inherit; /* Standardtextfarbe beibehalten */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover-Effekt */
+}
+
+/* Hover-Effekt für Grid-Item */
+.grid-item:hover {
+    transform: translateY(-5px); /* Leichter Lift-Effekt */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Dunklerer Schatten */
+}
+
+/* Grid-Bild */
+.grid-image {
+    width: 250px; /* Breite des Bildes */
+    height: 100px; /* Höhe des Bildes */
+    object-fit: cover; /* Bild proportional zuschneiden */
+}
+
+/* Grid-Text */
+.grid-text {
+    flex: 1; /* Text nimmt den verbleibenden Platz ein */
+}
+
+.grid-text h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff; /* Weiße Schrift */
+}
+
+
+.arrow {float: right;; margin-right: 10px; color: white; font-size: 1.5rem;}
+
+
+.tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tier {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.tier h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tier-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.tier-item {
+    background-color: #00000015;
+    border: 1px solid #27080831;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tier-item h3 {
+    font-size: 18px;
+    margin-top: 0.5rem;
+}
+
+.tier-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.tier-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Filter Button Styles */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
+
+.filter-button.active {
+    background-color: #007BFF;
+    color: #fff;
+    border-color: #007BFF;
+}
+
+
+
+.events-section {
+    display: none;
+    background-color: rgb(29, 27, 27); /* Hintergrundfarbe hinzufügen */
+    padding: 40px 20px; /* Angepasster Abstand */
+    margin: 0 auto; /* Zentrierung beibehalten */
+    position: relative;
+    z-index: 10; /* Über dem Video-Hintergrund */
+}
+
+.events-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.event-item {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.event-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.event-date {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+    padding: 5px 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.event-image:hover {
+    transform: scale(1.02);
+    transform: scale(1.05); /* Stärkerer Zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Dunklerer Schatten */
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100px;
+        width: 250px;
+        background: #00000000;
+        transition: left 0.3s;
+        z-index: 99;
+        padding-top: 3rem;
+    }
+    
+    .nav-container.active {
+        left: 0;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-item {
+        max-width: 100%;
+    }
+    
+    .event-date {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        min-height: 300px;
+    }
+    
+    video {
+        height: 300px;
+    }
+    
+    .events-section {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+
+    .info-box {
+        margin: 10px 0; /* Oben und unten Abstand zwischen den Boxen */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .grid-section {
+        grid-template-columns: 1fr; /* Eine Spalte auf kleinen Bildschirmen */
+    }
+
+    .grid-item {
+        flex-direction: column; /* Bild und Text untereinander */
+        text-align: center; /* Text zentrieren */
+    }
+
+    .grid-image {
+        width: 250px; /* Bild nimmt die volle Breite ein */
+        height: 100px; /* Höhe automatisch anpassen */
+        place-self: left;
+        float: left;
+    }
+}

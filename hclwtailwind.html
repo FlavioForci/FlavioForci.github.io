@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCLW</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle fixed left-4 top-5 z-[100] bg-gray-700 text-white py-2 px-3 text-xl rounded-lg">☰</button>
+
+    <!-- Navigation -->
+    <nav class="absolute top-0 w-full z-[100]">
+        <div class="nav-container w-full flex justify-start items-center p-4 bg-gray-700/50">
+            <div class="logo mr-5">
+                <img src="/HCLW.png" alt="logo" class="w-[200px]">
+            </div>
+            <div class="nav-links flex gap-8">
+                <a href="/hclw.html" class="active text-white px-3 py-2 rounded-lg bg-[#b95851] font-bold">Home</a>
+                <a href="#guide" class="text-white px-3 py-2 rounded-lg hover:bg-gray-600">Guide</a>
+                <a href="#tier-list" class="text-white px-3 py-2 rounded-lg hover:bg-gray-600">Tier List</a>
+                <a href="#characters" class="text-white px-3 py-2 rounded-lg hover:bg-gray-600">Characters</a>
+                <a href="#unique" class="text-white px-3 py-2 rounded-lg hover:bg-gray-600">Unique</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Video Section -->
+    <div class="video-container relative w-full min-h-[400px] overflow-hidden">
+        <div class="video-overlay absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/10 shadow-inner"></div>
+        <video autoplay muted loop playsinline class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full h-[400px] object-cover object-[10%_20%] z-10">
+            <source src="/0hcXF4YeyfPHd7TS0hxtJDICceIAVIPz5_BH9tQwVMJzgwBXldISMzbTgMYTgzK3pzH0A4cDgMJDgOFnpAIUsvRDtMKywNK3ldG081RCgPKRcjDT1aG3F7bS4.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Reward Codes Section -->
+    <div class="info-box cursor-pointer bg-gray-700 shadow-lg p-5 text-center my-4 mx-10 rounded-md" id="toggleButton">
+        <h3 class="text-xl">Reward Codes</h3>
+    </div>
+
+    <section class="info-section hidden flex-wrap justify-around p-0 bg-transparent transition-all duration-300 ease-in-out mx-4">
+        <div class="info-box bg-gray-800 p-5 m-4 shadow-md rounded-lg">
+            <p class="info-title text-lg font-bold">HAPPY2025</p>
+            <p class="info-value">50 Points</p>
+        </div>
+        <div class="info-box bg-gray-800 p-5 m-4 shadow-md rounded-lg">
+            <p class="info-title text-lg font-bold">PREREGISTER</p>
+            <p class="info-value">Diamonds x5,000, Equipment Summon Tickets x30</p>
+        </div>
+        <div class="info-box bg-gray-800 p-5 m-4 shadow-md rounded-lg">
+            <p class="info-title text-lg font-bold">COMMUNITY</p>
+            <p class="info-value">x1,500, Equipment Summon Tickets x30</p>
+        </div>
+        <div class="info-box bg-gray-800 p-5 m-4 shadow-md rounded-lg">
+            <p class="info-title text-lg font-bold">FRIDAYHCLW</p>
+            <p class="info-value">Diamond x10,000, Luck Buff Pill x1</p>
+        </div>
+        <div class="info-box bg-gray-800 p-5 m-4 shadow-md rounded-lg">
+            <p class="info-title text-lg font-bold">BOORI1YEAR</p>
+            <p class="info-value">Diamonds x5,000</p>
+        </div>
+        <div class="info-box bg-gray-800 p-5 m-4 shadow-md rounded-lg">
+            <p class="info-title text-lg font-bold">PLUSHCLW</p>
+            <p class="info-value">Soul Sphere x400, Diamond x1500, Dice x200</p>
+        </div>
+        <div class="info-box bg-gray-800 p-5 m-4 shadow-md rounded-lg">
+            <p class="info-title text-lg font-bold">WELCOMEHCLW</p>
+            <p class="info-value">Diamonds x10,000, Giga Workshop Tickets x100</p>
+        </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section class="grid-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-4 mt-4">
+        <a href="/link-zur-seite-1" class="grid-item flex gap-5 bg-gray-800 shadow-lg p-4 rounded-lg hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300">
+            <img src="/HCLW Image/Guide.png" alt="Guide" class="grid-image w-[250px] h-[100px] object-cover">
+            <div class="grid-text flex-1 text-white">
+                <h3 class="text-xl font-semibold">Beginner Guide <span class="arrow text-2xl">→</span></h3>
+            </div>
+        </a>
+
+        <a href="/link-zur-seite-2" class="grid-item flex gap-5 bg-gray-800 shadow-lg p-4 rounded-lg hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300">
+            <img src="/HCLW Image/Re Roll Guide.png" alt="Re Roll" class="grid-image w-[250px] h-[100px] object-cover">
+            <div class="grid-text flex-1 text-white">
+                <h3 class="text-xl font-semibold">Re-Roll Guide <span class="arrow text-2xl">→</span></h3>
+            </div>
+        </a>
+
+        <a href="/tierList.html" class="grid-item flex gap-5 bg-gray-800 shadow-lg p-4 rounded-lg hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300">
+            <img src="/HCLW Image/Tier List.png" alt="Tier List" class="grid-image w-[250px] h-[100px] object-cover">
+            <div class="grid-text flex-1 text-white">
+                <h3 class="text-xl font-semibold">Tier List <span class="arrow text-2xl">→</span></h3>
+            </div>
+        </a>
+
+        <a href="/link-zur-seite-4" class="grid-item flex gap-5 bg-gray-800 shadow-lg p-4 rounded-lg hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300">
+            <img src="/HCLW Image/Charchat.png" alt="Chars" class="grid-image w-[250px] h-[100px] object-cover">
+            <div class="grid-text flex-1 text-white">
+                <h3 class="text-xl font-semibold">Characters <span class="arrow text-2xl">→</span></h3>
+            </div>
+        </a>
+
+        <a href="/link-zur-seite-6" class="grid-item flex gap-5 bg-gray-800 shadow-lg p-4 rounded-lg hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300">
+            <img src="/HCLW Image/Stat Priority.png" alt="Stat Priority" class="grid-image w-[250px] h-[100px] object-cover">
+            <div class="grid-text flex-1 text-white">
+                <h3 class="text-xl font-semibold">Stat Priority <span class="arrow text-2xl">→</span></h3>
+            </div>
+        </a>
+
+        <a href="/link-zur-seite-5" class="grid-item flex gap-5 bg-gray-800 shadow-lg p-4 rounded-lg hover:shadow-xl hover:translate-y-[-5px] transition-all duration-300">
+            <img src="/HCLW Image/kiste.png" alt="Items" class="grid-image w-[250px] h-[100px] object-cover">
+            <div class="grid-text flex-1 text-white">
+                <h3 class="text-xl font-semibold">Items <span class="arrow text-2xl">→</span></h3>
+            </div>
+        </a>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section hidden bg-gray-900 py-10 px-5 z-[10] relative">
+        <div class="events-heading text-center text-4xl text-white mb-10 uppercase tracking-wider">
+            <img src="/800x199__.png" alt="">
+        </div>
+
+        <div class="events-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="event-item p-4 shadow-lg bg-gray-800 rounded-lg">
+                <img src="/testevent.png" alt="Event 1" class="w-full rounded-lg mb-4">
+                <div class="event-title text-xl font-semibold">Free Stuff</div>
+                <div class="event-details text-white">Some free stuff</div>
+            </div>
+
+            <div class="event-item p-4 shadow-lg bg-gray-800 rounded-lg">
+                <img src="/testevent.png" alt="Event 2" class="w-full rounded-lg mb-4">
+                <div class="event-title text-xl font-semibold">Bonus</div>
+                <div class="event-details text-white">A really cool event</div>
+            </div>
+
+            <div class="event-item p-4 shadow-lg bg-gray-800 rounded-lg">
+                <img src="/testevent.png" alt="Event 3" class="w-full rounded-lg mb-4">
+                <div class="event-title text-xl font-semibold">Free Stuff</div>
+                <div class="event-details text-white">Some free stuff</div>
+            </div>
+
+            <div class="event-item p-4 shadow-lg bg-gray-800 rounded-lg">
+                <img src="/testevent.png" alt="Event 4" class="w-full rounded-lg mb-4">
+                <div class="event-title text-xl font-semibold">Bonus</div>
+                <div class="event-details text-white">A really cool event</div>
+            </div>
+        </div>
+    </section>
+
+   
+        <!-- Navbar -->
+        <nav class="bg-white shadow-lg fixed w-full">
+          <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+              <!-- Logo -->
+              <div class="flex space-x-4">
+                <div>
+                  <a href="#" class="flex items-center py-5 px-2 text-gray-700">
+                    <span class="font-bold text-xl">Logo</span>
+                  </a>
+                </div>
+              </div>
+      
+              <!-- Primary Nav -->
+              <div class="hidden md:flex items-center space-x-1">
+                <a href="#" class="py-5 px-3 text-gray-700">Home</a>
+                <a href="#" class="py-5 px-3 text-gray-700">About</a>
+                <a href="#" class="py-5 px-3 text-gray-700">Contact</a>
+              </div>
+      
+              <!-- Mobile button -->
+              <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Mobile Menu -->
+          <div class="mobile-menu hidden md:hidden">
+            <a href="#" class="block py-2 px-4 text-sm text-gray-700">Home</a>
+            <a href="#" class="block py-2 px-4 text-sm text-gray-700">About</a>
+            <a href="#" class="block py-2 px-4 text-sm text-gray-700">Contact</a>
+          </div>
+        </nav>
+      
+        <!-- Content -->
+        <div class="p-6 mt-20">
+          <h1 class="text-2xl font-bold text-gray-700">Responsive Tailwind Navbar Example</h1>
+          <p class="mt-4 text-gray-600">Resize your browser window to see the responsive effect.</p>
+        </div>
+      
+        <script>
+          // Hamburger Menu Toggle
+          const btn = document.querySelector('.mobile-menu-button');
+          const menu = document.querySelector('.mobile-menu');
+      
+          btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        </script>
+
+<script src="/script.js"></script>
+
+
+</body>
+</html>

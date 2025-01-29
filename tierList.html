@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><img src="/HCLW.png" alt="logo   " width="200px"></div>
+            <div class="nav-links">
+                <a href="/hclw.html" class="active">Home</a>
+                <a href="#guide">Guide</a>
+                <a href="#tier-list">Tier List</a>
+                <a href="#characters">Characters</a>
+                <a href="#unique">Unique</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="video-container">
+        <div class="video-overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="/0hcXF4YeyfPHd7TS0hxtJDICceIAVIPz5_BH9tQwVMJzgwBXldISMzbTgMYTgzK3pzH0A4cDgMJDgOFnpAIUsvRDtMKywNK3ldG081RCgPKRcjDT1aG3F7bS4.mp4" type="video/mp4">
+
+        </video>
+    </div>
+
+
+    <div class="filter-buttons">
+        <button class="filter-button active" data-filter="all" onclick="filterTierList('all')">All</button>
+        <button class="filter-button" data-filter="DPS" onclick="filterTierList('DPS')">DPS</button>
+        <button class="filter-button" data-filter="Tank" onclick="filterTierList('Tank')">Tank</button>
+        <button class="filter-button" data-filter="Support" onclick="filterTierList('Support')">Support</button>
+    </div>
+    
+    
+
+
+    <section class="tier-list">
+        <!-- Tier S -->
+        <div class="tier">
+            <h2>Tier S</h2>
+            <div class="tier-row">
+                <div class="tier-item">
+                    <img src="/HCLW Image/zero.png" alt="Character 1" class="tier-image">
+                    <h3>Character 1</h3>
+                    <p>Role: DPS</p>
+                </div>
+                <div class="tier-item">
+                    <img src="/images/character2.png" alt="Character 2" class="tier-image">
+                    <h3>Character 2</h3>
+                    <p>Role: Tank</p>
+                </div>
+                <!-- Weitere Charaktere in Tier S -->
+            </div>
+        </div>
+    
+        <!-- Tier A -->
+        <div class="tier">
+            <h2>Tier A</h2>
+            <div class="tier-row">
+                <div class="tier-item">
+                    <img src="/images/character3.png" alt="Character 3" class="tier-image">
+                    <h3>Character 3</h3>
+                    <p>Role: Support</p>
+                </div>
+                <!-- Weitere Charaktere in Tier A -->
+            </div>
+        </div>
+    
+        <!-- Weitere Tier-Level -->
+    </section>
+    
+    <script src="/script.js"></script>
+</body>
+</html>
